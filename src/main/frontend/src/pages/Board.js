@@ -273,7 +273,7 @@ const Board = () => {
 
     const remove = useCallback((boardNo) => {
         dispatch(deleteBoard(boardNo));
-        navi("/board-list");
+        navi("/app/board-list");
     }, [dispatch, navi]);
   return (
     <Container maxWidth='md' style={{marginTop: '3%', textAlign: 'center'}}>
