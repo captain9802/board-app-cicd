@@ -9,11 +9,7 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         // 리액트 라우트 요청시 index.html로 가도록 설정
-        registry.addViewController("/{spring:\\w+}")
-                .setViewName("forward:/");
-        registry.addViewController("/**/{spring:\\w+}")
-                .setViewName("forward:/");
-        registry.addViewController("/{spring:\\w+}/**{spring:?~(\\.js|\\.css)$}")
-                .setViewName("forward:/");
+        registry.addViewController("/app/**")
+                .setViewName("forward:/index.html");
     }
 }
